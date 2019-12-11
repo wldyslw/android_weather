@@ -30,6 +30,10 @@ class Overview : Fragment() {
 
         binding.viewModel = viewModel
 
+        binding.refreshButton.setOnClickListener {
+            viewModel.fetchWeather()
+        }
+
         viewModel.error.observe(this, Observer { message ->
             if (!message.isNullOrEmpty()) {
                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show()

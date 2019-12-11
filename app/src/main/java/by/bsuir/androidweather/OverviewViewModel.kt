@@ -33,7 +33,7 @@ class OverviewViewModel : ViewModel() {
         fetchWeather()
     }
 
-    private fun fetchWeather() {
+    fun fetchWeather() {
         WeatherAPI.retrofitService.getMinskWeather().enqueue(
             object : Callback<LocalWeather> {
                 override fun onFailure(call: Call<LocalWeather>, t: Throwable) {
